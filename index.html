@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Salesforce Developer portfolio — Apex, Lightning Web Components, integrations, and automation.">
+  <title>Sohail Khan | Salesforce Developer</title>
+  <style>
+    :root{--bg:#080c16;--panel:#101728;--panel2:#121d32;--text:#f3f6ff;--muted:#a6b1c8;--blue:#55a7ff;--cyan:#5eead4;--line:rgba(168,190,230,.15);--shadow:0 24px 70px rgba(0,0,0,.28)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(ellipse at 78% 0%,rgba(37,99,235,.18),transparent 35%),radial-gradient(ellipse at 0% 35%,rgba(13,148,136,.10),transparent 30%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none} .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(8,12,22,.78);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}.brand{font-weight:800;letter-spacing:-.04em}.brand span{color:var(--blue)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:white}
+    .hero{padding:100px 0 82px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:50px;min-height:570px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(94,234,212,.24);border-radius:999px;padding:7px 13px;color:#baf9ed;background:rgba(20,184,166,.08);font-size:.82rem;font-weight:650}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+    h1{font-size:clamp(2.8rem,6.5vw,5.5rem);line-height:1.02;letter-spacing:-.065em;margin:23px 0 20px;max-width:750px}
+    .gradient{background:linear-gradient(100deg,#8dc8ff 0%,#5eead4 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro{font-size:1.12rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(100deg,#398bfa,#4dbece);color:#06101e;border:0}.secondary{background:rgba(255,255,255,.03)}
+    .orbit{min-height:330px;display:grid;place-items:center;position:relative}.orb{width:260px;height:260px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(85,167,255,.35);background:radial-gradient(circle at 35% 30%,rgba(85,167,255,.22),rgba(16,23,40,.7) 62%);box-shadow:0 0 100px rgba(37,99,235,.15),inset 0 0 45px rgba(94,234,212,.06);position:relative}
+    .orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(94,234,212,.22);border-radius:50%;inset:-20px;transform:rotate(-25deg) scaleY(.42)}.orb:after{inset:-43px;border-color:rgba(85,167,255,.19);transform:rotate(35deg) scaleY(.42)}
+    .sf-mark{font-size:3.6rem;font-weight:900;letter-spacing:-.08em;color:#d7edff;text-shadow:0 0 35px rgba(85,167,255,.55)}.float{position:absolute;padding:10px 13px;border-radius:12px;background:#121d32;border:1px solid var(--line);box-shadow:var(--shadow);font-size:.84rem;font-weight:700}.f1{top:28px;left:0}.f2{right:-8px;top:85px}.f3{bottom:28px;left:10px}.f4{bottom:44px;right:0}
+    section{padding:70px 0;scroll-margin-top:75px}.section-head{max-width:680px;margin-bottom:30px}.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:800}.section-title{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.05em;margin:10px 0 12px}.sub{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(18,29,50,.88),rgba(13,19,33,.88));box-shadow:0 12px 40px rgba(0,0,0,.08)}.card h3{margin:9px 0 8px;font-size:1.1rem}.card p{margin:0;color:var(--muted);font-size:.94rem}.iconbox{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(85,167,255,.12);border:1px solid rgba(85,167,255,.2);color:#a8d4ff;font-size:1.1rem;font-weight:900}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{font-size:.78rem;padding:5px 9px;border:1px solid var(--line);border-radius:8px;color:#cbd7ed;background:rgba(255,255,255,.025)}
+    .project{display:flex;flex-direction:column;min-height:255px}.project .more{margin-top:auto;padding-top:20px;color:#8bc6ff;font-size:.88rem;font-weight:750}.project .more span{padding-left:4px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.callout{border-radius:20px;border:1px solid rgba(85,167,255,.22);padding:26px;background:linear-gradient(130deg,rgba(37,99,235,.12),rgba(20,184,166,.06))}
+    .steps{display:grid;gap:13px}.step{display:flex;gap:14px;align-items:flex-start}.num{flex:0 0 32px;height:32px;border-radius:10px;display:grid;place-items:center;background:rgba(94,234,212,.1);color:var(--cyan);font-weight:800}.step p{margin:0;color:var(--muted)}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:34px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(37,99,235,.13),rgba(16,23,40,.8))}
+    footer{padding:28px 0 42px;color:#7f8da8;font-size:.85rem;border-top:1px solid var(--line);margin-top:55px}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:72px;gap:10px}.orbit{min-height:290px;max-width:420px;width:100%;margin:auto}.grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.f2{right:0}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.navlinks{gap:12px;font-size:.8rem}.navlinks a:nth-child(2){display:none}.hero{padding-top:55px}.orb{width:205px;height:205px}.sf-mark{font-size:2.8rem}.float{font-size:.72rem;padding:8px}.grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}section{padding:52px 0}}
+  </style>
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="brand" href="#home">SK<span>.</span></a>
+  <div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+</nav></header>
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Salesforce Development · CRM Solutions</div>
+      <h1>Building smarter<br><span class="gradient">Salesforce experiences.</span></h1>
+      <p class="intro">Hi, I’m <strong>Sohail Khan</strong> — a Salesforce Developer focused on Apex, Lightning Web Components, automation, and integrations that solve real business problems.</p>
+      <div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn secondary" href="#contact">Let’s connect ↗</a></div>
+    </div>
+    <div class="orbit" aria-label="Salesforce technology illustration">
+      <div class="orb"><div class="sf-mark">SF<span style="color:#5eead4">.</span></div></div>
+      <div class="float f1">⚡ Apex</div><div class="float f2">◈ Lightning Web Components</div><div class="float f3">↔ Integrations</div><div class="float f4">✓ Automation</div>
+    </div>
+  </div>
+
+  <section id="about"><div class="wrap">
+    <div class="section-head"><div class="kicker">A little about me</div><h2 class="section-title">Turning business needs into<br><span class="gradient">useful CRM solutions.</span></h2><p class="sub">I work across Salesforce development, automation, and integrations — from backend logic to mobile-friendly user experiences.</p></div>
+    <div class="about-grid">
+      <div class="card"><div class="iconbox">⌘</div><h3>What I focus on</h3><p>Building maintainable Apex logic, reusable LWCs, reliable API integrations, and automation that supports business processes.</p><div class="tags"><span class="tag">Bulkification</span><span class="tag">Governor limits</span><span class="tag">Testing</span></div></div>
+      <div class="callout"><h3 style="margin-top:0">My development approach</h3><div class="steps"><div class="step"><span class="num">01</span><p><strong>Understand</strong><br>Clarify the business requirement and data model.</p></div><div class="step"><span class="num">02</span><p><strong>Build</strong><br>Create scalable Apex, LWC, Flow, and integration solutions.</p></div><div class="step"><span class="num">03</span><p><strong>Validate</strong><br>Test edge cases, permissions, bulk data, and error handling.</p></div></div></div>
+    </div>
+  </div></section>
+
+  <section id="skills"><div class="wrap">
+    <div class="section-head"><div class="kicker">Technical toolkit</div><h2 class="section-title">Skills I bring to the table.</h2><p class="sub">Keep this section aligned with the tools and concepts you can confidently explain in an interview.</p></div>
+    <div class="grid">
+      <article class="card"><div class="iconbox">⌘</div><h3>Apex Development</h3><p>Triggers, handler patterns, classes, collections, exception handling, and bulk-safe logic.</p><div class="tags"><span class="tag">Apex</span><span class="tag">Maps / Sets</span><span class="tag">Governor limits</span></div></article>
+      <article class="card"><div class="iconbox">▧</div><h3>Lightning Web Components</h3><p>Reusable UI components, forms, tables, client-server communication, and responsive layouts.</p><div class="tags"><span class="tag">LWC</span><span class="tag">JavaScript</span><span class="tag">SLDS</span></div></article>
+      <article class="card"><div class="iconbox">⌕</div><h3>Data & SOQL</h3><p>Query design, relationships, aggregate queries, data modelling, and efficient DML patterns.</p><div class="tags"><span class="tag">SOQL</span><span class="tag">SOSL</span><span class="tag">Schema</span></div></article>
+      <article class="card"><div class="iconbox">↯</div><h3>Automation</h3><p>Declarative automation and validation that keep business processes consistent.</p><div class="tags"><span class="tag">Record-Triggered Flow</span><span class="tag">Validation Rules</span></div></article>
+      <article class="card"><div class="iconbox">⇄</div><h3>API Integrations</h3><p>REST integration patterns, JSON payloads, request/response handling, and field mapping.</p><div class="tags"><span class="tag">REST API</span><span class="tag">JSON</span><span class="tag">Postman</span></div></article>
+      <article class="card"><div class="iconbox">✓</div><h3>Quality & Delivery</h3><p>Test classes, assertions, debugging, access checks, and deployment readiness.</p><div class="tags"><span class="tag">Apex Tests</span><span class="tag">Debug Logs</span><span class="tag">Git</span></div></article>
+    </div>
+  </div></section>
+
+  <section id="projects"><div class="wrap">
+    <div class="section-head"><div class="kicker">Selected work</div><h2 class="section-title">Projects & problem-solving.</h2><p class="sub">These are portfolio summaries. Add only details you’re allowed to share, and describe your own contribution accurately.</p></div>
+    <div class="grid">
+      <article class="card project"><div class="iconbox">⇄</div><h3>Invoice Integration</h3><p>Salesforce invoice processing with external-system integration patterns, JSON wrapper structures, field mapping, validation, and Apex test coverage.</p><div class="tags"><span class="tag">Apex REST</span><span class="tag">JSON</span><span class="tag">Testing</span></div><a class="more" href="#contact">Discuss the approach <span>↗</span></a></article>
+      <article class="card project"><div class="iconbox">▦</div><h3>Order Booking & Allocation</h3><p>Business workflows for quantity allocation across roles, booking validation, pending quantity calculations, and user-friendly screens.</p><div class="tags"><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">Validation</span></div><a class="more" href="#contact">Discuss the approach <span>↗</span></a></article>
+      <article class="card project"><div class="iconbox">◎</div><h3>Claims Management</h3><p>Claim submission and claim-item workflows, record visibility considerations, and responsive components for reviewing pending claims.</p><div class="tags"><span class="tag">LWC</span><span class="tag">Apex</span><span class="tag">Sharing</span></div><a class="more" href="#contact">Discuss the approach <span>↗</span></a></article>
+      <article class="card project"><div class="iconbox">⌗</div><h3>Product & Pricing Mapping</h3><p>Metadata-driven mapping concepts to align product and pricing data between Salesforce custom objects and an external business system.</p><div class="tags"><span class="tag">Custom Objects</span><span class="tag">Field Mapping</span><span class="tag">Automation</span></div><a class="more" href="#contact">Discuss the approach <span>↗</span></a></article>
+      <article class="card project"><div class="iconbox">▤</div><h3>Metadata Export Utility</h3><p>Developer utility concepts for gathering object and field information, displaying results, and exporting structured data for analysis.</p><div class="tags"><span class="tag">LWC</span><span class="tag">Apex</span><span class="tag">Export</span></div><a class="more" href="#contact">Discuss the approach <span>↗</span></a></article>
+      <article class="card project"><div class="iconbox">▥</div><h3>Developer Dashboard</h3><p>Dashboard UI concepts for presenting Salesforce metrics and limits in a clear, scannable format.</p><div class="tags"><span class="tag">LWC</span><span class="tag">Charts</span><span class="tag">UI</span></div><a class="more" href="#contact">Discuss the approach <span>↗</span></a></article>
+    </div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <div class="contact"><div><div class="kicker">Contact</div><h2 class="section-title" style="margin-bottom:8px">Let’s build something useful.</h2><p class="sub">Open to discussing Salesforce development, CRM automation, and integration opportunities.</p></div><div class="actions" style="margin-top:0"><a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a><a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn secondary" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+  </div></section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Sohail Khan · Salesforce Developer Portfolio <span style="float:right">Built with HTML & CSS</span></div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
